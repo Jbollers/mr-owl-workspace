@@ -1,0 +1,4 @@
+interface:
+  display_name: "30/45-Minute PowerPoint Lesson Editor"
+  short_description: "Shorten lessons while protecting student work"
+  default_prompt: "Use $powerpoint-lesson-editor for this request, following my supplied sources and constraints."

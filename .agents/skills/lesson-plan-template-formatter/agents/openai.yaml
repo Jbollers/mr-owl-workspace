@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lesson Plan Template Formatter"
+  short_description: "Format plans in your teacher-facing template"
+  default_prompt: "Use $lesson-plan-template-formatter for this request, following my supplied sources and constraints."

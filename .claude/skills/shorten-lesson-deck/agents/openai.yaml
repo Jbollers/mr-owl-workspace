@@ -1,0 +1,4 @@
+interface:
+  display_name: "30-Minute Lesson Workflow"
+  short_description: "Shorten lesson decks while protecting learning goals"
+  default_prompt: "Use $shorten-lesson-deck with the attached teacher guide and PowerPoint to create a 30-minute classroom lesson, with indoor alternatives, pacing notes, and a concise edit rationale."

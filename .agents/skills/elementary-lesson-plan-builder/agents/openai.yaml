@@ -1,0 +1,4 @@
+interface:
+  display_name: "Elementary Lesson Plan Builder"
+  short_description: "Source-grounded elementary teaching plans"
+  default_prompt: "Use $elementary-lesson-plan-builder for this request, following my supplied sources and constraints."

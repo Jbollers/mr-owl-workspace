@@ -1,0 +1,4 @@
+interface:
+  display_name: "PowerPoint Teacher Notes Generator"
+  short_description: "Add concise teaching notes and activity timing"
+  default_prompt: "Use $powerpoint-teacher-notes-generator for this request, following my supplied sources and constraints."
