@@ -1,0 +1,227 @@
+{
+  "mesh": "SM_FirstJobHouse_Walkable",
+  "triangles": 5341,
+  "vertices": 8396,
+  "materials": [
+    "M_Siding",
+    "M_Trim",
+    "M_Roof",
+    "M_Concrete",
+    "M_Glass",
+    "M_MetalDark",
+    "M_Wallpaper",
+    "M_WallPaint_Living",
+    "M_WallPaint_Dining",
+    "M_WallPaint_Entry",
+    "M_Ceiling",
+    "M_WoodFloor",
+    "M_TileFloor"
+  ],
+  "uv_layers": [
+    "UVMap",
+    "Lightmap"
+  ],
+  "size_m": [
+    8.67,
+    11.33,
+    9.642
+  ],
+  "collision_hulls": 135,
+  "collision_triangles": 1618,
+  "cleanup": {
+    "faces_before": 6298,
+    "triangles_before": 12592,
+    "double_faces_removed": 0,
+    "occluded_faces_removed": 3618,
+    "ground_contact_faces_removed": 8,
+    "faces_after": 2672,
+    "triangles_after": 5341,
+    "zfight_candidates": []
+  },
+  "levels_m": {
+    "ground_floor": 0.9,
+    "ground_ceiling": 3.5,
+    "upper_floor": 3.7,
+    "upper_ceiling": 6.05
+  },
+  "clear_height_m": {
+    "ground": 2.6,
+    "upper": 2.35
+  },
+  "stair": {
+    "risers": 14,
+    "rise_m": 0.2,
+    "treads": 13,
+    "going_m": 0.25,
+    "width_m": 0.95,
+    "pitch_deg": 38.7,
+    "min_headroom_m": 2.0
+  },
+  "rooms": [
+    {
+      "room": "Utility cupboard",
+      "floor": "ground",
+      "area_m2": 0.64,
+      "paint_target": false,
+      "wall_material": "M_Wallpaper",
+      "floor_material": "M_TileFloor"
+    },
+    {
+      "room": "Kitchen",
+      "floor": "ground",
+      "area_m2": 10.67,
+      "paint_target": false,
+      "wall_material": "M_Wallpaper",
+      "floor_material": "M_TileFloor"
+    },
+    {
+      "room": "Living room",
+      "floor": "ground",
+      "area_m2": 20.43,
+      "paint_target": true,
+      "wall_material": "M_WallPaint_Living",
+      "floor_material": "M_WoodFloor"
+    },
+    {
+      "room": "Entry and stair hall",
+      "floor": "ground",
+      "area_m2": 12.54,
+      "paint_target": true,
+      "wall_material": "M_WallPaint_Entry",
+      "floor_material": "M_WoodFloor"
+    },
+    {
+      "room": "Dining room",
+      "floor": "ground",
+      "area_m2": 9.46,
+      "paint_target": true,
+      "wall_material": "M_WallPaint_Dining",
+      "floor_material": "M_WoodFloor"
+    },
+    {
+      "room": "Bedroom",
+      "floor": "upper",
+      "area_m2": 20.43,
+      "paint_target": false,
+      "wall_material": "M_Wallpaper",
+      "floor_material": "M_WoodFloor"
+    },
+    {
+      "room": "Locked room",
+      "floor": "upper",
+      "area_m2": 9.81,
+      "paint_target": false,
+      "wall_material": "M_Wallpaper",
+      "floor_material": "M_WoodFloor"
+    },
+    {
+      "room": "Landing",
+      "floor": "upper",
+      "area_m2": 4.95,
+      "paint_target": false,
+      "wall_material": "M_Wallpaper",
+      "floor_material": "M_WoodFloor"
+    },
+    {
+      "room": "Spare room",
+      "floor": "upper",
+      "area_m2": 8.34,
+      "paint_target": false,
+      "wall_material": "M_Wallpaper",
+      "floor_material": "M_WoodFloor"
+    },
+    {
+      "room": "Bathroom",
+      "floor": "upper",
+      "area_m2": 7.11,
+      "paint_target": false,
+      "wall_material": "M_Wallpaper",
+      "floor_material": "M_TileFloor"
+    }
+  ],
+  "doors": [
+    {
+      "door": "Front",
+      "mesh": "SM_FJH_Door_Front",
+      "clear_width_m": 0.95,
+      "clear_height_m": 2.1,
+      "locked": false
+    },
+    {
+      "door": "Living",
+      "mesh": "SM_FJH_Door_Interior",
+      "clear_width_m": 0.9,
+      "clear_height_m": 2.1,
+      "locked": false
+    },
+    {
+      "door": "Kitchen",
+      "mesh": "SM_FJH_Door_Interior",
+      "clear_width_m": 0.9,
+      "clear_height_m": 2.1,
+      "locked": false
+    },
+    {
+      "door": "DiningKitchen",
+      "mesh": "SM_FJH_Door_Interior",
+      "clear_width_m": 0.9,
+      "clear_height_m": 2.1,
+      "locked": false
+    },
+    {
+      "door": "Utility",
+      "mesh": "SM_FJH_Door_Cupboard",
+      "clear_width_m": 0.6,
+      "clear_height_m": 2.0,
+      "locked": false
+    },
+    {
+      "door": "Bedroom",
+      "mesh": "SM_FJH_Door_Interior",
+      "clear_width_m": 0.9,
+      "clear_height_m": 2.1,
+      "locked": false
+    },
+    {
+      "door": "Locked",
+      "mesh": "SM_FJH_Door_Interior",
+      "clear_width_m": 0.9,
+      "clear_height_m": 2.1,
+      "locked": true
+    },
+    {
+      "door": "Spare",
+      "mesh": "SM_FJH_Door_Interior",
+      "clear_width_m": 0.9,
+      "clear_height_m": 2.1,
+      "locked": false
+    },
+    {
+      "door": "Bathroom",
+      "mesh": "SM_FJH_Door_Interior",
+      "clear_width_m": 0.9,
+      "clear_height_m": 2.1,
+      "locked": false
+    }
+  ],
+  "door_meshes": {
+    "SM_FJH_Door_Front": {
+      "width_m": 0.94,
+      "height_m": 2.09,
+      "thickness_m": 0.045,
+      "triangles": 1122
+    },
+    "SM_FJH_Door_Interior": {
+      "width_m": 0.89,
+      "height_m": 2.09,
+      "thickness_m": 0.04,
+      "triangles": 1722
+    },
+    "SM_FJH_Door_Cupboard": {
+      "width_m": 0.59,
+      "height_m": 1.99,
+      "thickness_m": 0.035,
+      "triangles": 1722
+    }
+  }
+}

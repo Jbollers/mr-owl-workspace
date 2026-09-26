@@ -63,3 +63,44 @@ Reuse one interior door with material/lock variants, one dining chair instanced 
 - Concept images only: no dimensioned CAD plan, meshes, textures or engine scene were produced.
 
 Generated with the built-in image generator using the accepted exterior as reference. Exact prompts: [floor plan](first-job-floorplan-prompt.txt) · [props](first-job-props-prompt.txt).
+
+## Walkable house in Blender — September 25, 2026
+
+Build-order step 1, the playable shell, built in Blender 5.2 from the accepted exterior and this floor plan. The existing [solid exterior model](first-job-house.md#game-ready-model--september-25-2026) is unchanged.
+
+[![Ground-floor cutaway seen from above: living room, entry with stair, dining room, kitchen and utility cupboard.](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_plan_ground.png)](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_plan_ground.png)
+
+[![Upper-floor cutaway seen from above: bedroom, locked room, stairwell, landing, spare room and bathroom.](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_plan_upper.png)](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_plan_upper.png)
+
+[![Entry hall with the stair and balustrade, the living-room doorway on the left and the open kitchen door ahead.](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_interior_entry.png)](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_interior_entry.png)
+
+Previews: [ground plan](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_plan_ground.png) · [upper plan](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_plan_upper.png) · [entry](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_interior_entry.png) · [living room](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_interior_living.png) · [landing](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_interior_landing.png) · [front three-quarter](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_front_three_quarter.png) · [back left](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_back_left.png)
+
+Files: [build script](3d/first-job-house-walkable/build_first_job_house_walkable.py) · [Blender source](3d/first-job-house-walkable/SM_FirstJobHouse_Walkable.blend) · [house FBX](3d/first-job-house-walkable/SM_FirstJobHouse_Walkable.fbx) · door FBX: [front](3d/first-job-house-walkable/SM_FJH_Door_Front.fbx), [interior](3d/first-job-house-walkable/SM_FJH_Door_Interior.fbx), [cupboard](3d/first-job-house-walkable/SM_FJH_Door_Cupboard.fbx) · [door placements](3d/first-job-house-walkable/door_placements.json) · [build report](3d/first-job-house-walkable/build_report.json)
+
+**Fitting the plan to the exterior.** The accepted exterior is 8 × 7.5 m plus a 0.5 m front bay, not the plan's approximate 8 × 10 m. Rooms keep the plan's arrangement and connections but are smaller. The rear rooms are 2.8 m deep.
+
+| Floor | Room | Area | Walls |
+| --- | --- | --- | --- |
+| Ground | Living room (includes bay) | 20.4 m² | `M_WallPaint_Living` (paint target) |
+| Ground | Entry and stair hall | 12.5 m² | `M_WallPaint_Entry` (paint target) |
+| Ground | Dining room | 9.5 m² | `M_WallPaint_Dining` (paint target) |
+| Ground | Kitchen + utility cupboard | 10.7 + 0.6 m² | wallpaper, tile floor |
+| Upper | Bedroom (front left) | 20.4 m² | wallpaper |
+| Upper | Locked room (front right, L-shaped) | 9.8 m² | wallpaper |
+| Upper | Landing | 5.0 m² | wallpaper |
+| Upper | Spare room | 8.3 m² | wallpaper |
+| Upper | Bathroom | 7.1 m² | wallpaper, tile floor |
+
+- **Downstairs loop:** porch → entry → living → open cased arch → dining → kitchen → entry. Each of the three paint rooms has its own material slot, so the engine can track and tint them independently.
+- **Stair:** one straight flight along the living-room wall, rising rearward, as the blockout constraint requires. It has 14 risers of 0.20 m, 13 treads of 0.25 m, a width of 0.95 m and a pitch of 38.7°, with 2.0 m minimum headroom. The open hall side has a balustrade. The collision ramp runs along the nosings, below the Unreal default walkable angle of 44.76°.
+- **Heights:** ground floor 0.9 m, ground ceiling 2.6 m clear, upper floor 3.7 m. The upper ceiling is 2.35 m clear, limited by the existing eave. Every doorway is 0.9 × 2.1 m clear except the 0.6 × 2.0 m cupboard.
+- **Doors:** separate leaves with the pivot on the hinge. `door_placements.json` gives each location, closed yaw and opening direction. The front, locked and cupboard doors are closed in the saved scene; the rest are open. The locked door uses the ordinary interior leaf.
+- **Mesh:** 5,341 triangles and 13 materials, with 135 convex `UCX_` hulls covering walls, floors, ceilings, window glass, the stair ramp, the balustrade, the roof and the porch. UV0 is tiling world-scale; UV1 holds lightmap UVs. Door leaves have one hull each: interior and cupboard doors have 1,722 triangles and the front door 1,122.
+- **Door hardware:** aged-brass knobs (`M_BrassAged`, with a tarnish texture). Interior and cupboard doors have a turned rosette and a round keyhole escutcheon; the front door has a period backplate with the keyhole on it. The knob sits 0.97 m above the leaf bottom, 65 mm from the latch edge, on both faces. [Close-up](3d/first-job-house-walkable/previews/SM_FirstJobHouse_Walkable_door_knob.png)
+- **Hidden-face cleanup (September 26):** the build deletes every face a camera cannot see: 1,790 double faces at joins between wall pieces, faces buried inside other solids (the backs of trim, the undersides of walls, floors and stair blocks where they meet), faces facing into the sealed attic, and bottom faces resting on the ground. The house went from 12,592 to 5,341 triangles. An exact scan found 57 overlapping same-facing faces, all on the exterior and inherited from the shell (foundation, skirt, corner and frieze boards, vents, ridge caps, porch deck, piers, steps and fascia, gutter joints); each was fixed at its source, and the scan now reports none. Glass never counts as hiding anything. Faces only partly hidden are kept whole. The counts are in `build_report.json` under `cleanup`.
+- **Exterior change:** the upper window on the left side moved 0.15 m forward so the bedroom/spare-room partition clears it. The windows now have glass and interior casings.
+
+**Checks:** an FBX round trip in Blender re-imported all four files with matching names, `UCX_` collision, both UV channels, DirectX normal maps and correct sizes. The interior and plan previews were inspected visually.
+
+**Not yet verified:** the Unreal import, the conversion of door placements to Unreal coordinates, and a first-person walk with the chosen player controller. Unreal needs a translucent glass material; the Blender glass is a preview only. Skirting boards, furniture and lighting come in later build-order steps.

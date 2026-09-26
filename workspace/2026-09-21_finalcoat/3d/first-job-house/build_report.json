@@ -1,0 +1,25 @@
+{
+  "mesh": "SM_FirstJobHouse",
+  "triangles": 3664,
+  "vertices": 2444,
+  "materials": [
+    "M_Siding",
+    "M_Trim",
+    "M_Roof",
+    "M_Concrete",
+    "M_Door",
+    "M_Glass",
+    "M_MetalDark"
+  ],
+  "uv_layers": [
+    "UVMap",
+    "Lightmap"
+  ],
+  "size_m": [
+    8.65,
+    11.33,
+    9.642
+  ],
+  "collision_hulls": 13,
+  "collision_triangles": 158
+}
