@@ -1,0 +1,122 @@
+{
+  "note": "Blender coordinates relative to the house pivot. Rotate about Z at the pivot (hinge edge, leaf bottom); add open_yaw_delta_deg to open. Unreal conversion is not yet verified; expected: X cm = x*100, Y cm = -y*100, Z cm = z*100, yaw = -blender_yaw.",
+  "doors": [
+    {
+      "door": "Front",
+      "mesh": "SM_FJH_Door_Front",
+      "locked": false,
+      "blender_location_m": [
+        1.48,
+        -3.69,
+        0.905
+      ],
+      "blender_yaw_closed_deg": 0,
+      "open_yaw_delta_deg": 90,
+      "blender_yaw_in_saved_scene_deg": 0
+    },
+    {
+      "door": "Living",
+      "mesh": "SM_FJH_Door_Interior",
+      "locked": false,
+      "blender_location_m": [
+        0.74,
+        -3.465,
+        0.905
+      ],
+      "blender_yaw_closed_deg": 90,
+      "open_yaw_delta_deg": 90,
+      "blender_yaw_in_saved_scene_deg": 170.0
+    },
+    {
+      "door": "Kitchen",
+      "mesh": "SM_FJH_Door_Interior",
+      "locked": false,
+      "blender_location_m": [
+        3.295,
+        0.69,
+        0.905
+      ],
+      "blender_yaw_closed_deg": 180,
+      "open_yaw_delta_deg": -90,
+      "blender_yaw_in_saved_scene_deg": 100.0
+    },
+    {
+      "door": "DiningKitchen",
+      "mesh": "SM_FJH_Door_Interior",
+      "locked": false,
+      "blender_location_m": [
+        -0.36,
+        2.545,
+        0.905
+      ],
+      "blender_yaw_closed_deg": -90,
+      "open_yaw_delta_deg": 90,
+      "blender_yaw_in_saved_scene_deg": -10.0
+    },
+    {
+      "door": "Utility",
+      "mesh": "SM_FJH_Door_Cupboard",
+      "locked": false,
+      "blender_location_m": [
+        3.675,
+        2.7,
+        0.905
+      ],
+      "blender_yaw_closed_deg": 180,
+      "open_yaw_delta_deg": 90,
+      "blender_yaw_in_saved_scene_deg": 180
+    },
+    {
+      "door": "Bedroom",
+      "mesh": "SM_FJH_Door_Interior",
+      "locked": false,
+      "blender_location_m": [
+        -0.495,
+        0.69,
+        3.705
+      ],
+      "blender_yaw_closed_deg": 0,
+      "open_yaw_delta_deg": -90,
+      "blender_yaw_in_saved_scene_deg": -80.0
+    },
+    {
+      "door": "Locked",
+      "mesh": "SM_FJH_Door_Interior",
+      "locked": true,
+      "blender_location_m": [
+        3.495,
+        0.69,
+        3.705
+      ],
+      "blender_yaw_closed_deg": 180,
+      "open_yaw_delta_deg": 90,
+      "blender_yaw_in_saved_scene_deg": 180
+    },
+    {
+      "door": "Spare",
+      "mesh": "SM_FJH_Door_Interior",
+      "locked": false,
+      "blender_location_m": [
+        -0.76,
+        0.855,
+        3.705
+      ],
+      "blender_yaw_closed_deg": 90,
+      "open_yaw_delta_deg": 90,
+      "blender_yaw_in_saved_scene_deg": 170.0
+    },
+    {
+      "door": "Bathroom",
+      "mesh": "SM_FJH_Door_Interior",
+      "locked": false,
+      "blender_location_m": [
+        0.305,
+        1.91,
+        3.705
+      ],
+      "blender_yaw_closed_deg": 0,
+      "open_yaw_delta_deg": 90,
+      "blender_yaw_in_saved_scene_deg": 80.0
+    }
+  ]
+}
